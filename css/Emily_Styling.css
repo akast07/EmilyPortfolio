@@ -17,7 +17,7 @@ body{
   font-size: 62.5%;
 }
 a:visited{
-  color:cyan;
+  color:black;
   text-decoration: none;
 }
 
@@ -26,10 +26,10 @@ li{
       color:black;
     }
 li:hover{
-      color:cyan;
+      color:#DDCCFF;
     }
 li:visited{
-      color:#DDCCFF;
+      color:black;
     }
 
 h4{
@@ -50,6 +50,7 @@ time{
   width: 100%;
   max-width: 100%;
   top:0px;
+  max-height: auto;
 }
   #bannerImage{
         top:0px;
@@ -163,52 +164,47 @@ time{
   margin-bottom:30px;
   bottom:4.931331212860912%; /*120 ÷ 2433.420 */
   clear:both;
+  vertical-align: middle;
+  float: none;
+  text-align: center;
+  padding-bottom: 50px;
 }
+@media screen and (max-width:1214px){
+  #HomeName{
+    font-size: .7em;
+  }
+}
+
+
 /*tablet  media queries */
 @media screen and (max-width:786px){
   body{
-    font-size: 100%;
-  }
-  ul{
+  font-size: 100%;
+ }
+ #Categories{
+   position:relative;
+   max-width: 100%;
+   font-size: .8em;
+   font-weight: bold;
+   top:0;
+   text-align: center;
+   margin:0 auto;
+   padding-bottom: 20px;
+ }
+ #Categories li{
+   display:inline;
+   text-align: center;
+ }
+ #Categories li a{
+   display: block;
+   max-width: 100%;
+ }
+ #TwoImages > ul{
+    position: relative;
+    width: 100%;
+    max-height: 100%;
     float:left;
     overflow: auto;
-  }
-  li{
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    padding: 0;
-    clear: both;
-    margin: 0 auto;
-    text-align: center;
-    top:0px;
-    right: 0px;
-    bottom: 0px;
-  }
-  img#faceImage,img#ghost{
-    margin: 0 auto;
-    padding: 0;
-    width: auto;
-    max-height:100%;
-    width: auto;
-    display: inline-block;
-
-  }
-  #HomeName{
-    position: absolute;
-    font-size: .6em;
-    bottom:0%;
-  }
-  #Categories{
-    clear:both;
-    position: relative;
-  }
-  #EmilyDescription{
-    position: relative;
-    margin-left:10.62134891131174%; /*200 ÷ 1883 =*/
-    margin-right: 10.62134891131174%;
-    font-size: 1.4em;
   }
   #TwoImages{
     position: relative;
@@ -216,27 +212,78 @@ time{
     clear:both;
     overflow: auto;
     margin:0 auto;
+    padding:0;
+    vertical-align: middle;
+    font-size: 0;
   }
-  /*#ghostArt{
-    overflow: auto;
-    clear:both;
+  #TwoImages > li{
+    position:relative;
+    display:inline-block;
+    right: 0px;
+    width: 100%;
+    height: 100%;
     max-width: 100%;
-    z-index: 1;
+    max-height:100%;
+    top:0px;
+    text-align: center;
+    align-items: center;
+    float:none;
     clear:both;
+    overflow: hidden;
+    }
+  img#faceImage, img#ghostArt{
+    position:inherit;
+    display: block;
+    width: 100%;
+    margin:0 0 100px 0; /*margin between list items???*/
+    padding: 0 auto;
+    float: none;
+    clear:both;
+    vertical-align: middle;
   }
-  #faceImage{
-    clear:both;
-    max-width: 100%;
-    position: center;
-    z-index: 1;
-  }*/
-  #footer{
+  #HomeName{
     position: absolute;
-    display: inline-block;
-    bottom:2%;
+    max-width: 100%;
+    font-size: .6em;
+    bottom:0%;
+  }
+
+  #EmilyDescription{
+    position: relative;
+    clear:both;
+    margin-left:10.62134891131174%; /*200 ÷ 1883 =*/
+    margin-right: 10.62134891131174%;
+    font-size: 1.4em;
+  }
+  #footer{
+    max-width: 100%;
+    position: relative;
+    display: inline;
+    text-align: center;
+    bottom:5%;
+    margin-bottom: 4%;
     font-size: 1em;
   }
 }
-/*
-@media only screen and (min-width:600)
-*/
+
+/*Phone Styling*/
+@media screen and (max-width:486px){
+  #bannerImage img{
+    padding-bottom: 20px;
+  }
+  #HomeName{
+    margin:0 auto;
+  }
+  #HomeName > h4{
+    font-size: 2em;
+  }
+  #Categories{
+    text-align: center;
+    vertical-align: middle;
+    padding-bottom: 50px;
+    margin-bottom:40px;
+  }
+  #EmilyDescription{
+    font-size: 1em;
+  }
+}
