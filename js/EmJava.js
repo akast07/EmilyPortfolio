@@ -7,6 +7,18 @@
     // });
 
     var modal = document.getElementById('myModal');
+    //on click on the window .click()
+    modal.addEventListener('click',function(){
+      this.style.display="none";
+    })
+
+    //get the<span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    //when the user clicks on <span> (x), close the modal
+    span.onclick=function(){
+      modal.style.display="none";
+    }
 
     //get the image and insert it inside the modal - use its "alt" text as a caption
     // var test = document.getElementById("myImg"); //??? test is null
@@ -39,11 +51,4 @@
       modalImg.src = newSrc;
       //captionText.innerHTML=this.alt;
     });
-    //get the<span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    //when the user clicks on <span> (x), close the modal
-    span.onclick=function(){
-      modal.style.display="none";
-    }
-  })
-}($));
+  })}($));

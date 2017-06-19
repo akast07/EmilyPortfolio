@@ -89,6 +89,7 @@ ul.rig li{
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  padding-bottom: 60px;
 }
 /*Title of each picture frame */
 ul.rig li h3{
@@ -117,10 +118,13 @@ ul.rig.columns-3 li{
   max-width:100%;
   opacity: 0;
   transition: .5s ease;
+  text-align: middle;
+  vertical-align: middle;
 }
 
 .text{
-  color:white;
+  color:#212F3D;
+  text-shadow:0 0 3px #7F8C8D, 0 0 5PX #F7F9F9;
   font-size: 22px;
   bottom:47px;
   left:175px;
@@ -153,8 +157,8 @@ li.image:hover .overlay{
 .modal-content{
   margin:auto;
   display:block;
-  width:80%;
-  max-width: 700;
+  width:30%;
+  max-width: 300;/*700 original px width*/
   -webkit-animation-name:zoom;
   -webkit-animation-duration:0.6s;
   animation-name:zoom;

@@ -67,7 +67,7 @@ time{
       position:absolute;
       display: inline-block;
       width: 100%;
-      bottom:10%; /* 200 ÷ 1259.420 = 20.95377932764369% */
+      bottom:20%; /* 200 ÷ 1259.420 = 20.95377932764369% */
       opacity: 1;
     }
       #HomeName h4{
