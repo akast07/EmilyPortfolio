@@ -164,3 +164,79 @@ time{
   bottom:4.931331212860912%; /*120 ÷ 2433.420 */
   clear:both;
 }
+/*tablet  media queries */
+@media screen and (max-width:786px){
+  body{
+    font-size: 100%;
+  }
+  ul{
+    float:left;
+    overflow: auto;
+  }
+  li{
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 0;
+    clear: both;
+    margin: 0 auto;
+    text-align: center;
+    top:0px;
+    right: 0px;
+    bottom: 0px;
+  }
+  img#faceImage,img#ghost{
+    margin: 0 auto;
+    padding: 0;
+    width: auto;
+    max-height:100%;
+    width: auto;
+    display: inline-block;
+
+  }
+  #HomeName{
+    position: absolute;
+    font-size: .6em;
+    bottom:0%;
+  }
+  #Categories{
+    clear:both;
+    position: relative;
+  }
+  #EmilyDescription{
+    position: relative;
+    margin-left:10.62134891131174%; /*200 ÷ 1883 =*/
+    margin-right: 10.62134891131174%;
+    font-size: 1.4em;
+  }
+  #TwoImages{
+    position: relative;
+    display: block;
+    clear:both;
+    overflow: auto;
+    margin:0 auto;
+  }
+  /*#ghostArt{
+    overflow: auto;
+    clear:both;
+    max-width: 100%;
+    z-index: 1;
+    clear:both;
+  }
+  #faceImage{
+    clear:both;
+    max-width: 100%;
+    position: center;
+    z-index: 1;
+  }*/
+  #footer{
+    position: absolute;
+    display: inline-block;
+    bottom:2%;
+    font-size: 1em;
+  }
+}
+/*
+@media only screen and (min-width:600)
+*/
