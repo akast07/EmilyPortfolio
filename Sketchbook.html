@@ -1,7 +1,410 @@
 <!DOCTYPE html>
-<Html>
-  <head profile="">
-<Title>Sketches</title>
+<html>
+<head>
+  <meta name="keywords" content="Emily,Antinozzi,art,illustration,Dallas,Texas">
+    <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
+    <link href="css\Image_Template.css" rel="stylesheet" type="text/css">
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.min.js'/></script>
+    <script src="js\EmJava.js" type="text/javascript"/></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>Emily Antinozzi - Sketchbook</title>
+
+    <meta name="viewport" content="width=device-width"/>
+
 </head>
-<body></body>
-</Html>
+
+<body>
+
+  <a href="index.html" id="HomeName">
+    <h4>Sketches</h4>
+  </a>
+  <div id="Categories">
+        <ul id="categoryList">
+          <a href="Sketches.html"><li>Sketchbook</li></a>
+           <a href="Drawings&Paintings.html"><li>Drawings/Paintings</li>
+           <a href="Charcoal.html"><li>Charcoal</li></a>
+           <a href="Photography.html"><li>Photography</li></a>
+           <a href="Collages.html"><li>Collages</li></a>
+           <a href="Portraits.html"><li>Portraits<li></a>
+           <li>Contact Me</li>
+         </ul>
+    </div>
+<ul class="rig columns-3">
+      <li class="image" id="image-li-one">
+          <img src="img\FolderImages_Sketches\cat.JPG" width="345" height="460" id="myImg"/>
+          <div class="overlay">
+            <div class="text" id="overlay-one"></div>
+          </div>
+          <!--The Modal-->
+          <div id="myModal" class="modal">
+            <!--the close button-->
+            <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+            <!--modal content(the image)-->
+            <img class="modal-content" id="img01">
+            <!--Modal caption (image text) -->
+            <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\door.JPG" width="345" height="460" id="myImg">
+            <div class="overlay">
+              <div class="text" id="overlay-one"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8192.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+          <img src="img\FolderImages_Sketches\IMG_8193.JPG" width="345" height="460" id="myImg"/>
+          <div class="overlay">
+            <div class="text"></div>
+          </div>
+          <!--The Modal-->
+          <div id="myModal" class="modal">
+            <!--the close button-->
+            <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+            <!--modal content(the image)-->
+            <img class="modal-content" id="img01">
+            <!--Modal caption (image text) -->
+            <div id="caption"></div>
+      </li>
+      <li class="image">
+          <img src="img\FolderImages_Sketches\IMG_8194.JPG" width="345" height="460" id="myImg"/>
+          <div class="overlay">
+            <div class="text">2005<br/>35mm film<br/>  6 x 4 in.</br></div>
+          </div>
+          <!--The Modal-->
+          <div id="myModal" class="modal">
+            <!--the close button-->
+            <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+            <!--modal content(the image)-->
+            <img class="modal-content" id="img01">
+            <!--Modal caption (image text) -->
+            <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8197.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8199.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8200.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8201.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8203.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8204.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8205.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8206.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8207.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8209.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8210.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8211.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8212.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8214.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8215.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8216.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8217.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8219.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8220.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8222.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+      <li class="image">
+            <img src="img\FolderImages_Sketches\IMG_8224.JPG" width="345" height="460" id="myImg"/>
+            <div class="overlay">
+              <div class="text"></div>
+            </div>
+            <!--The Modal-->
+            <div id="myModal" class="modal">
+              <!--the close button-->
+              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+              <!--modal content(the image)-->
+              <img class="modal-content" id="img01">
+              <!--Modal caption (image text) -->
+              <div id="caption"></div>
+      </li>
+</ul>
+    <div id="footer">
+      <ul id ="contactList">
+        <a href="https://antinozziart.tumblr.com"/><li>Tumblr</li></a>
+        <a href="https://www.instagram.com/elantinozzi/"><li>Instagram</li></a>
+        <a href="mailto:emily.antinozzi@gmail.com"/><li>E-Mail</li>
+      </ul>
+      </div>
+      <time>©2017</time>
+</body>
+
+</html>
