@@ -167,7 +167,7 @@ li.image:hover .overlay{
 .modal-content{
   margin:auto;
   display:block;
-  width:30%;
+  width:50%;
   max-width: 300;/*700 original px width*/
   -webkit-animation-name:zoom;
   -webkit-animation-duration:0.6s;
@@ -225,6 +225,16 @@ li.image:hover .overlay{
     max-width: 100%;
   }
   #categoryList{
+    text-align: center;
+  }
+  .overlay{
+    position: relative;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+  }
+  .text{
     text-align: center;
   }
 }
