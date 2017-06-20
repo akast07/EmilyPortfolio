@@ -136,26 +136,30 @@ time{
   max-width: 100%;
   max-height: 100%;
 }
-#ghostArt{
+/*#ghostArt{
   position:relative;
-  transform: rotate(90deg);/*width becomes height and height becomes width*/
+  transform: rotate(90deg);/*width becomes height and height becomes width
   max-width: 100%;
   max-height: 100%;
-  height:26.55337227827934%;/* 500 ÷ 1883 =26.55337227827934*/
-  width:35.40392989909719%;/*666.656 ÷ 1883  = */
-  bottom:33.5195530726257%; /* 300 ÷ 895 =33.5195530726257%*/
+  height:26.55337227827934%; 500 ÷ 1883 =26.55337227827934
+  width:35.40392989909719%; 666.656 ÷ 1883  =
+  bottom:33.5195530726257%; 300 ÷ 895 =33.5195530726257%
   float:left;
-  left:15.9320233669676%; /*300÷1883*/
-}
+  left:15.9320233669676%; 300÷1883
+}*/
 #faceImage{
   position: relative;
   bottom:100px; /* 100 ÷ 895 = 11.1731843575419*/
-  max-width: 100%;
+  width: 40%;
+  height: auto;
   max-height: 100%;
-  width: 26.55337227827934%; /* 500 ÷ 1883 = */
-  right:17.52522570366437%; /* 400 ÷ 1883 =21.24269782262347%    right: 330px ÷ 1883*/
-  float:right;
-}
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  /*width: 26.55337227827934%; 500 ÷ 1883 =*/
+  /*right:17.52522570366437%;400 ÷ 1883 =21.24269782262347%    right: 330px ÷ 1883*/
+
+  }
 #EmilyDescription{
   position:relative;
   margin-left:10.62134891131174%; /*200 ÷ 1883 =*/
