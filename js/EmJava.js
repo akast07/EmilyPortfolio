@@ -1,5 +1,19 @@
+// When the user clicks on the button, scroll to the top of the document
+var topFunction = function(){
+  document.body.scrollTop = 0; // For Chrome, Safari and Opera
+  document.documentElement.scrollTop = 0; // For IE and Firefox
+};
+
 (function($) {
   $().ready(function(){
+
+      window.onscroll = function() {scrollFunction()};
+
+//displays button after 100 px down the page
+  function scrollFunction() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {document.getElementById("myBtn").style.display = "block";}
+      else {document.getElementById("myBtn").style.display = "none";}
+    }
 
     //DEBUG
     // $('html').click(function(evt){
@@ -51,4 +65,11 @@
       modalImg.src = newSrc;
       //captionText.innerHTML=this.alt;
     });
+
+
+    $(top).on("click",function(evt){
+
+    })
+
+
   })}($));
