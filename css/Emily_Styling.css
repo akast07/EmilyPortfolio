@@ -94,7 +94,7 @@ time{
   text-align: right;
 }
 #categoryList li{
-  color:black;
+  color:#888888;
 }
 #categoryList li:hover{
   color:#ddccff;
