@@ -279,6 +279,15 @@ li.image:hover .overlay{
 @media only screen and (max-width:486px){
 .rig columns-3{
   padding: 0 0 0 0 ;}
+  .overlay{
+    align-content: center;
+    text-align: center;
+    margin: 0 -50%;
+  }
+.text{
+  font-size: 1.4em ;
+  text-align: center;
+}
 }
 /*media queries to fix and understand*/
 
