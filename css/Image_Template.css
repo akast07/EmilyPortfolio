@@ -23,6 +23,9 @@ h4:visited{
 a:visited{
   color:black;
 }
+a:-webkit-any-link{
+  color:black;
+}
 body{
   min-height: 100%;
   position: relative;
@@ -51,6 +54,10 @@ li:active{
 }
 #categoryList{
   text-align: right;
+  color: rgb(0,0,0);
+}
+#categoryList li:visited{
+  color:black;
 }
 #footer{
   position: absolute;
