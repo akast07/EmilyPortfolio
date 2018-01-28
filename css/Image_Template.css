@@ -319,6 +319,10 @@ li.image:hover .overlay{
   .text{
     text-align: center;
   }
+  #timely{
+    position: relative;
+    margin-top:10%;
+  }
 }
 @media only screen and (max-width:1753px){
   ul.rig{
@@ -352,20 +356,54 @@ li.image:hover .overlay{
     left: 50%;
     margin-right: auto;
   }
+  #footer:before{
+    content: "";
+    display: block;
+    width: 70%;
+    margin-top:-8%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: solid;
+    padding-bottom: 2em;
+  }
   #footer{
-    display: table;
-    bottom:.3%;
-    margin:5% 0% 0% 0%;
+    display: block;
   }
   #timely{
-    bottom:-1%;
-    padding-bottom: 10px;
+    display:block;
+    position: relative;
+    bottom:-11%;
+    margin-top:11%;
+  }
+}
+
+@media only screen and (max-width:1399px){
+  #timely{
+    margin-top:17%;
+}
+
+}
+
+@media only screen and (max-width:1123px){
+  #timely{
+    margin-top:23%;
+  }
+}
+@media only screen and (max-width:870px){
+  #timely{
+    margin-top:29%;
   }
 }
 /*tablet styling*/
 @media only screen and (max-width:786px){
   .modal-content{
     width:100%;
+  }
+}
+
+@media only screen and (max-width:731px){
+  #timely{
+    margin-top:31%;
   }
 }
 /*phone styling*/
