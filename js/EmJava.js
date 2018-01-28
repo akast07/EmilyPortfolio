@@ -6,7 +6,6 @@ var topFunction = function(){
 
 (function($) {
   $().ready(function(){
-
       window.onscroll = function() {scrollFunction()};
 
 //displays button after 100 px down the page
