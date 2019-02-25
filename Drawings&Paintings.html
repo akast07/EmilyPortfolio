@@ -17,7 +17,7 @@
 </head>
 
 <body>
-
+  <div class="pageContainer">
   <a href="index.html" id="HomeName">
     <h4>Drawings & Paintings</h4>
   </a>
@@ -31,6 +31,18 @@
          </ul>
     </div>
 <ul class="rig columns-3">
+    <li class="image"  >
+        <img src="img\FolderImages_Drawings&Paintings\img138.jpg" width="345" height="505.8270676691729"  />
+        <div class="overlay">
+          <div class="text">2019<br/>colored pencil, gouache and watercolor</br></div>
+        </div>
+        <!--The Modal-->
+        <div class="modal myModal">
+          <!--modal content(the image)-->
+          <img class="modal-content"  >
+          <!--Modal caption (image text) -->
+          <div class="caption"></div>
+    </li>
   <!--Cowboy Table Kid-->
   <li class="image"  >
     <img src="img\FolderImages_Drawings&Paintings\drawingHalloweenParty.jpg" width="345" height="297.83203125"  />
@@ -38,13 +50,11 @@
       <div class="text">2017<br/>colored pencil, gouache and watercolor</br></div>
     </div>
     <!--The Modal-->
-    <div id="myModal" class="modal">
-      <!--the close button-->
-      <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+    <div class="modal myModal">
       <!--modal content(the image)-->
-      <img class="modal-content" id="img01">
+      <img class="modal-content"  >
       <!--Modal caption (image text) -->
-      <div id="caption"></div>
+      <div class="caption"></div>
 </li>
   <li class="image"  >
         <img src="img\FolderImages_Drawings&Paintings\img056.jpg" width="345" height="546.5346534653465"  />
@@ -52,43 +62,24 @@
           <div class="text">2017<br/>colored pencil, gouache and watercolor</br></div>
         </div>
         <!--The Modal-->
-        <div id="myModal" class="modal">
-          <!--the close button-->
-          <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+        <div class="modal myModal">
           <!--modal content(the image)-->
-          <img class="modal-content" id="img01">
+          <img class="modal-content"  >
           <!--Modal caption (image text) -->
-          <div id="caption"></div>
+          <div class="caption"></div>
   </li>
   <!--2 kids on toy horses-->
       <li class="image">
           <img src="img\FolderImages_Drawings&Paintings\girlHorses.JPG" width="345" height="496.5097646469705"  />
           <div class="overlay">
-            <div class="text" id="overlay-one">2017<br/>colored pencil, gouache and watercolor<br/></div>
+            <div class="text" >2017<br/>colored pencil, gouache and watercolor<br/></div>
           </div>
           <!--The Modal-->
-          <div id="myModal" class="modal">
-            <!--the close button-->
-            <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+          <div class="modal myModal">
             <!--modal content(the image)-->
-            <img class="modal-content" id="img01">
+            <img class="modal-content"  >
             <!--Modal caption (image text) -->
-            <div id="caption"></div>
-      </li>
-      <!--Family Halloween-->
-      <li class="image">
-            <img src="img\FolderImages_Drawings&Paintings\halloween family.jpg" width="345" height="252.0181586492514"  >
-            <div class="overlay">
-              <div class="text" id="overlay-one">2017<br/>colored pencil, gouache and watercolor<br/></div>
-            </div>
-            <!--The Modal-->
-            <div id="myModal" class="modal">
-              <!--the close button-->
-              <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-              <!--modal content(the image)-->
-              <img class="modal-content" id="img01">
-              <!--Modal caption (image text) -->
-              <div id="caption"></div>
+            <div class="caption"></div>
       </li>
       <!--Dog Portrait-->
       <li class="image">
@@ -97,13 +88,11 @@
             <div class="text">2017<br/>colored pencil, gouache and watercolor</br></div>
           </div>
           <!--The Modal-->
-          <div id="myModal" class="modal">
-            <!--the close button-->
-            <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+          <div class="modal myModal">
             <!--modal content(the image)-->
-            <img class="modal-content" id="img01">
+            <img class="modal-content"  >
             <!--Modal caption (image text) -->
-            <div id="caption"></div>
+            <div class="caption"></div>
       </li>
 
       <li class="image">
@@ -112,15 +101,25 @@
             <div class="text">2017<br/>colored pencil, gouache and watercolor</br></div>
           </div>
           <!--The Modal-->
-          <div id="myModal" class="modal">
-            <!--the close button-->
-            <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+          <div class="modal myModal">
             <!--modal content(the image)-->
-            <img class="modal-content" id="img01">
+            <img class="modal-content"  >
             <!--Modal caption (image text) -->
-            <div id="caption"></div>
+            <div class="caption"></div>
       </li>
-
+            <!--Family Halloween-->
+            <li class="image">
+                <img src="img\FolderImages_Drawings&Paintings\halloween family.jpg" width="345" height="252.0181586492514"  >
+                <div class="overlay">
+                  <div class="text" >2017<br/>colored pencil, gouache and watercolor<br/></div>
+                </div>
+                <!--The Modal-->
+                <div class="modal myModal">
+                  <!--modal content(the image)-->
+                  <img class="modal-content"  >
+                  <!--Modal caption (image text) -->
+                  <div class="caption"></div>
+          </li>
 </ul>
 <!--button function for scroll to top-->
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
@@ -131,8 +130,9 @@
     <a href="mailto:emily.antinozzi@gmail.com"><li>emily.antinozzi@gmail.com</li></a>
     <a href="https://www.instagram.com/elantinozzi/"><li>Instagram</li></a>
   </ul>
+  <div id ="timely">&copy;2017</div>
   </div>
-  <div id ="timely">©2017</div>
+</div>
 </body>
 <!--Google Analytics-->
 <script>

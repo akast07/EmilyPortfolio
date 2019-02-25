@@ -1,71 +1,184 @@
-// When the user clicks on the button, scroll to the top of the document
-var topFunction = function () {
+/*
+Title : Emily Antinozzi Portfolio
+Author : Alejandro C.
+Last Updated : 2/25/2019
+*/
+let topFunction = function () {
   document.body.scrollTop = 0; // For Chrome, Safari and Opera
   document.documentElement.scrollTop = 0; // For IE and Firefox
 };
 
+
+function appendARROWS() {
+  let footerNode = document.getElementsByClassName("modal-content");
+  let arrowsHTML = `    <!-- Next/previous controls --><div class="prev" data-arrow-value="-1">&#10094;</div>`;
+  let rightArrowHTML = `<div class="next" data-arrow-value="1">&#10095;</div>`;
+  let closeIconHTML = `<span class="close">&times;</span>`;
+  for(let i = 0;i<footerNode.length;i++){
+    footerNode[i].insertAdjacentHTML('beforebegin', closeIconHTML);
+    footerNode[i].insertAdjacentHTML('beforebegin', arrowsHTML);
+    footerNode[i].insertAdjacentHTML('afterend', rightArrowHTML);
+  }
+}
+
+function modalIcons(element,modalIsActive) {
+  scrollingEnable(modalIsActive);
+  if (modalIsActive) {
+    $(".myModal").show();
+    $(".prev").css("display", "inline-block");
+    $(".next").css("display", "inline-block");
+    $(".close").show();
+  } else if (!modalIsActive) {
+    $(element).hide();
+  } else {
+    console.log("just checking");
+  }
+}
+
+function PositionCheck(currentIndex, arrowClickNum, ImgCount) {
+  if (currentIndex + arrowClickNum < 0) {
+    return ImgCount; //returns last image in set
+  } else if (arrowClickNum + currentIndex > ImgCount) {
+    return 0; //returns first image in set
+  } else {
+    return currentIndex + arrowClickNum;
+  }
+}
+
+function UpdateImgSource(LiParent,myModalIMG){
+  // .myModal after displayed
+  let originalSrc = LiParent.attr("src");
+  // IMG container
+  myModalIMG.attr("src",originalSrc);
+  // myModal change src
+  return;
+}
+
+function scrollingEnable(modalIsActive) {
+  if(modalIsActive){
+    $('body').addClass('stop-scrolling');
+  }else{
+    $('body').removeClass('stop-scrolling');
+  }
+}
+
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+/*HIDE MODAL */
+function hideModal(ObjectClosing) {
+  $(ObjectClosing).hide();
+}
+
 (function ($) {
+
   $().ready(function () {
+
+    /*Displays button after 100 px down the page */
     window.onscroll = function () {
       scrollFunction();
     };
 
-    //displays button after 100 px down the page
-    function scrollFunction() {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        document.getElementById("myBtn").style.display = "block";
-      } else {
-        document.getElementById("myBtn").style.display = "none";
+    /*Add arrows to all html IMGS */
+    appendARROWS();
+
+    let modal = $('.myModal');
+
+    /*WINDOW ON CLICK*/
+    modal.on('click', function (event) {
+      let clickedElem = $(event.target);
+      let parentElement = ".myModal";
+      if(clickedElem.is(':visible')){
+        if (clickedElem.hasClass('next') || clickedElem.hasClass('prev')) {
+          return;
+        }else if(clickedElem.closest(parentElement).length > 0){
+          hideModal(clickedElem.closest(parentElement));
+        } 
+        else {
+          hideModal(clickedElem.parent()); //on click on the window .click()
+        }
+      }else{
+        return;
       }
-    }
+    });
 
-    //DEBUG
-    // $('html').click(function(evt){
-    //   console.log('evt', evt, 'target', evt.target);
-    // });
+    /* X ICON CLOSE MODAL */
+    $(".close").on("click", function (event) {
+      hideModal($(event.target).parent().hide());
+    });
 
-    var modal = document.getElementById('myModal');
-    //on click on the window .click()
-    modal.addEventListener('click', function () {
-      this.style.display = "none";
-    })
+    $(".next,.prev").on("click", function (event) {
 
-    //get the<span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+      /*total imgs in rig */
+      let ImgRig = $(".rig");
+      let ImgCount = ImgRig.children().length;
+      ImgCount -= 1; //zero index purposes 
+      /*modalPosition index */
+      let thisImg;
+      let ImgPos;
+      let nextSrc;
+      let prevSrc;
 
-    //when the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-      modal.style.display = "none";
-    }
+      /*arrow click */
+      let arrowClick = $(event.target);
+      let arrowValue = arrowClick.data("arrowValue");
+      let myModal = arrowClick.parent();
+      thisImg = myModal.parent();
 
+      let ImgParent;
+      let myModalImg;
+
+      //show next img
+      hideModal(myModal);
+      if (arrowValue > 0) {
+        thisImg = $(this).prev();
+        ImgPos = $(".rig > li").index(thisImg.parent().parent());
+        nextSrc = PositionCheck(ImgPos, arrowValue, ImgCount);
+        ImgParent = ImgRig.children("li").eq(nextSrc);
+        ImgParent.children(".myModal").show();
+        myModalImg = ImgParent.children(".myModal").find("img");
+        UpdateImgSource(ImgParent.children("img"),myModalImg);
+      } else if (arrowValue < 0) {
+        //show prev img
+        thisImg = $(this).next();
+        ImgPos = $(".rig > li").index(thisImg.parent().parent());
+        prevSrc = PositionCheck(ImgPos, arrowValue, ImgCount);
+        ImgParent = ImgRig.children("li").eq(prevSrc);
+        ImgParent.children(".myModal").show();
+        myModalImg = ImgParent.children(".myModal").find("img");
+        UpdateImgSource(ImgParent.children("img"),myModalImg);
+      } else {
+        console.log('no image to show?');
+      }
+
+    });
     //get the image and insert it inside the modal - use its "alt" text as a caption
-    var test = "img,.text";
+    let test = "img,.text";
 
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-    // console.log('test var is',$(test));
-
+    /*SHOW IMG MODAL*/
     $(test).on("click", function (evt) {
 
-      var newSrc = this.src;
+      let activeModal = false;
+      let newSrc = this.src;
 
-      //conditional for text selection
-      if (evt.target.className === 'text') {
+      let clickParent = $(this);
 
-        //img,text - parentNODE == overlay
-        //overlay -parentNode == li.image
-        //li.image -firstchild(the first nodechild )== img
-        //img -next sibling(text inside div) == text
-
-        newSrc = evt.target.parentNode.parentNode.firstChild.nextSibling.src;
-
+      if (clickParent.hasClass('text')) {
+        newSrc = clickParent.parent().next().children(".modal-content").prop('src');
+        clickParent.parent().next().show();
+        clickParent.parent().next().children(".modal-content").attr("src", newSrc);
+      } else if (clickParent.is('img')) {
+        newSrc = clickParent.prop('src');
+        clickParent.next().next().show();
+        clickParent.next().next().children(".modal-content").attr("src", newSrc);
+      } else {
+        console.log("something else clicked");
       }
-
-      modal.style.display = "block";
-
-      //sets newSrc to modalImg
-      modalImg.src = newSrc;
-      //captionText.innerHTML=this.alt;
     });
-  })
+  });
 }($));

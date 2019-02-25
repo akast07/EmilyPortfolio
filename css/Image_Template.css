@@ -7,6 +7,8 @@
 
 html{height:100%;}
 body{
+}
+.pageContainer{
   min-height: 100%;
 }
 h4{
@@ -67,7 +69,7 @@ li:active{
   content: "";
   display: block;
   width: 70%;
-  margin-top:-8%;
+  /* margin-top:-8%; */
   margin-left: auto;
   margin-right: auto;
   border-top: solid;
@@ -76,26 +78,26 @@ li:active{
 #footer{
   position: absolute;
   clear:both;
-
+  /* padding-top:60px; */
   /*bottom:-6%;*/
-
   width: 100%;
   text-align: center;
   text-transform: capitalize;
   font-size: 20px;
   font-style:bold;
   color:black;
-  margin:10em auto -.4em auto;
+  /* margin:10em auto -.4em auto; */
 }
 #contactList::before{
-  padding-top: 2em auto .1em auto;
+  padding: 2em auto .1em auto;
 
 }
-#contactlist{
+#contactList{
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4em;
-  padding-top: 2em;
+  /* margin-top: 4em; */
+  /* padding-top: 2em; */
+  padding-bottom:2em;
 }
 #contactList li{
   color:black;
@@ -106,15 +108,15 @@ li:active{
 }
 #timely{
   position: absolute;
-  bottom:-4%;
+  bottom:0; /*-4*/
   width: 100%;
   text-align: center;
-  vertical-align: center;
   align-items: center;
   color:black;
   font-size: 1.1em;
 }
 time{
+  display: inline;
   position: absolute;
   bottom:0;
   width: 100%;
@@ -122,7 +124,6 @@ time{
   vertical-align: bottom;
   align-items: center;
   color:black;
-  display: inline;
 }
 /*ul of entire */
 ul.rig{
@@ -135,7 +136,7 @@ ul.rig{
 /*list of images styling*/
 ul.rig li{
   display:inline-block;
-  padding:10px;
+  /* padding:10px; */
   margin: 0 0 2.5% 2.5%;
   background: #fff;
   font-size: 16px;
@@ -144,7 +145,7 @@ ul.rig li{
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
 }
 /*Title of each picture frame */
 ul.rig li h3{
@@ -159,6 +160,7 @@ ul.rig li p{
 /*number of columns*/
 ul.rig.columns-3 li{
   width:30.83%;
+  text-align:center;
 }
 .image{
   display:block;
@@ -192,7 +194,7 @@ ul.rig.columns-3 li{
   -ms-transform:translate(-50%,-50%);
   font-weight: bold;
   cursor:pointer;
-  transition:0.3s.
+  transition:0.3s;
 }
 
 li.image:hover .overlay{
@@ -203,7 +205,8 @@ li.image:hover .overlay{
   display:none;/*hidden by default*/
   position:fixed;/*stays in place*/
   z-index:1;/*sits on top*/
-  padding-top:50px; /*location of the box*/
+/*location of the box*/
+  /* padding-top:50px;  */
   left:0;
   top:0;
   width:100%; /*full width*/
@@ -214,12 +217,13 @@ li.image:hover .overlay{
 }
 
 .modal-content{
-  margin:auto;
-  margin-top:auto;
-  margin-bottom: 15%;
   display:block;
-  width:50%;/*50% original*/
-  max-width: 700px; /*700 original px width*/
+  margin:auto;
+  transform:translateY(5%);  /* margin-bottom: 15%; */
+  height:90%; /*100%*/
+  width:auto; /*50% original*/
+  /* max-width: 700px;  */
+  /*700 original px width*/
   -webkit-animation-name:zoom;
   -webkit-animation-duration:0.6s;
   animation-name:zoom;
@@ -252,20 +256,67 @@ li.image:hover .overlay{
   text-decoration: none;
   cursor: pointer;
 }
+
+
+/* Next & previous buttons */
+.prev{
+  cursor: pointer;
+  display:inline-block;
+  position: absolute;
+  margin-left:auto;
+  margin-right:auto;
+  top: 50%;
+  left:400px;
+  /* margin: -50px auto 0px auto; */
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  z-index: 1;
+}
+
+.next{
+  cursor: pointer;
+  display:inline-block;
+  position: absolute;
+  margin-left:auto;
+  margin-right:auto;
+  top: 50%;
+  right:400px;
+  /* margin: -50px auto 0px auto; */
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  z-index: 1;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
 /*button styling for back to top*/
 #myBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: #DDCCFF; /* Set a background color */
-    color: BLACK; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
+    display: none;
+    position: fixed; 
+    bottom: 20px; 
+    right: 30px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: #DDCCFF;
+    color: BLACK;
+    cursor: pointer; 
+    padding: 15px;
+    border-radius: 10px;
     font-weight: bold;
     font-size: 1.7em;
     font-family: 'Yesteryear',cursive;
@@ -319,14 +370,18 @@ li.image:hover .overlay{
   .text{
     text-align: center;
   }
-  #timely{
+  .columns-3{
+
+  }
+
+  /* #timely{
     position: relative;
     margin-top:10%;
-  }
+  } */
 }
 @media only screen and (max-width:1753px){
   ul.rig{
-    padding:0 0 160px 0;
+    padding:0 0 100px 0;
     max-width: 100%;
     max-height: 100%;
     text-align: center;
@@ -356,43 +411,53 @@ li.image:hover .overlay{
     left: 50%;
     margin-right: auto;
   }
+  .prev{
+    left:5%;
+  }
+  .next{
+    right:5%;
+  }
   #footer:before{
     content: "";
     display: block;
     width: 70%;
-    margin-top:-8%;
+    /* margin-top:-8%; */
     margin-left: auto;
     margin-right: auto;
     border-top: solid;
-    padding-bottom: 2em;
+    /* padding-bottom: 2em; */
   }
   #footer{
     display: block;
   }
-  #timely{
+
+  /* #timely{
     display:block;
     position: relative;
     bottom:-11%;
     margin-top:11%;
-  }
+  } */
 }
 
 @media only screen and (max-width:1399px){
-  #timely{
+
+  /* #timely{
     margin-top:17%;
-}
+} */
 
 }
 
 @media only screen and (max-width:1123px){
-  #timely{
+ 
+  /* #timely{
     margin-top:23%;
-  }
+  } */
 }
 @media only screen and (max-width:870px){
-  #timely{
+  
+  /* #timely{
     margin-top:29%;
-  }
+  } */
 }
 /*tablet styling*/
 @media only screen and (max-width:786px){
@@ -402,9 +467,9 @@ li.image:hover .overlay{
 }
 
 @media only screen and (max-width:731px){
-  #timely{
+  /* #timely{
     margin-top:31%;
-  }
+  } */
 }
 /*phone styling*/
 @media only screen and (max-width:486px){
@@ -419,9 +484,10 @@ li.image:hover .overlay{
   font-size: 1.4em ;
   text-align: center;
 }
-#timely{
+
+/* #timely{
   padding-top:20px;
-}
+} */
 }
 /*media queries to fix and understand*/
 
