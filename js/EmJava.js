@@ -8,6 +8,24 @@ let topFunction = function () {
   document.documentElement.scrollTop = 0; // For IE and Firefox
 };
 
+function everyImageContainer(){
+  // foreach img in folder place Li>img,div>div,div>img,div
+}
+
+function autoHeightautoWidthImg(){
+  let AllImageLi = document.getElementsByClassName('image');
+  let uniqueImage;
+  let elementAutoHeight;
+
+  //set height and width for each image in page respectively
+  for(i = 0; i<AllImageLi.length; i++){
+
+    uniqueImage = AllImageLi[i].children[0];
+    elementAutoHeight = (uniqueImage.naturalHeight * 345) / uniqueImage.naturalWidth;
+    uniqueImage.height = elementAutoHeight;
+    uniqueImage.width = 345;
+  }
+}
 
 function appendARROWS() {
   let footerNode = document.getElementsByClassName("modal-content");
@@ -70,6 +88,8 @@ function scrollFunction() {
   }
 }
 
+
+
 /*HIDE MODAL */
 function hideModal(ObjectClosing) {
   $(ObjectClosing).hide();
@@ -84,6 +104,8 @@ function hideModal(ObjectClosing) {
       scrollFunction();
     };
 
+    /*AutoSize all images */
+    autoHeightautoWidthImg();
     /*Add arrows to all html IMGS */
     appendARROWS();
 
@@ -180,5 +202,8 @@ function hideModal(ObjectClosing) {
         console.log("something else clicked");
       }
     });
+
+    //set image default grid width and height
+    
   });
 }($));

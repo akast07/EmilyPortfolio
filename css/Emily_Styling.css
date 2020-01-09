@@ -40,6 +40,9 @@ h4{
 time{
   font-size: .5em;
 }
+#sectionContact{
+  color:black;
+}
 #timely{
   position: absolute;
   width: 100%;
