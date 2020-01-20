@@ -9,40 +9,6 @@ window.onscroll = function () {
   scrollFunction();
 };
 
-
-if (document.readyState !== 'loading') {
-  console.log('document is already ready, just execute code here');
-  /*AutoSize all images */
-  autoHeightautoWidthImg();
-  modalFunctionality();
-} else {
-  document.addEventListener('DOMContentLoaded', function () {
-    console.log('document was not ready, place code here');
-    /*AutoSize all images */
-    autoHeightautoWidthImg();
-    modalFunctionality();
-  });
-}
-
-//-----test to wait for load window before loading DOM
-window.addEventListener('DOMContentLoaded ', () => {
-  console.log('before document ready');
-  /*Displays button after 100 px down the page */
-
-  /*AutoSize all images */
-  autoHeightautoWidthImg();
-  modalFunctionality();
-});
-
-let topFunction = function () {
-  document.body.scrollTop = 0; // For Chrome, Safari and Opera
-  document.documentElement.scrollTop = 0; // For IE and Firefox
-};
-
-let everyImageContainer = () => {
-  // foreach img in folder place Li>img,div>div,div>img,div
-}
-
 let autoHeightautoWidthImg = () => {
   let AllImageLi = document.getElementsByClassName('image');
   console.log(AllImageLi);
@@ -61,75 +27,6 @@ let autoHeightautoWidthImg = () => {
     uniqueImage.width = 345;
   }
 }
-
-let appendARROWS = () => {
-  let footerNode = document.getElementsByClassName("modal-content");
-  let arrowsHTML = `    <!-- Next/previous controls --><div class="prev" data-arrow-value="-1">&#10094;</div>`;
-  let rightArrowHTML = `<div class="next" data-arrow-value="1">&#10095;</div>`;
-  let closeIconHTML = `<span class="close">&times;</span>`;
-  for (let i = 0; i < footerNode.length; i++) {
-    footerNode[i].insertAdjacentHTML('beforebegin', closeIconHTML);
-    footerNode[i].insertAdjacentHTML('beforebegin', arrowsHTML);
-    footerNode[i].insertAdjacentHTML('afterend', rightArrowHTML);
-  }
-}
-
-
-let modalIcons = (element, modalIsActive) => {
-  scrollingEnable(modalIsActive);
-  if (modalIsActive) {
-    $(".myModal").show();
-    $(".prev").css("display", "inline-block");
-    $(".next").css("display", "inline-block");
-    $(".close").show();
-  } else if (!modalIsActive) {
-    $(element).hide();
-  } else {
-    console.log("just checking");
-  }
-}
-
-let PositionCheck = (currentIndex, arrowClickNum, ImgCount) => {
-  if (currentIndex + arrowClickNum < 0) {
-    return ImgCount; //returns last image in set
-  } else if (arrowClickNum + currentIndex > ImgCount) {
-    return 0; //returns first image in set
-  } else {
-    return currentIndex + arrowClickNum;
-  }
-}
-
-let UpdateImgSource = (LiParent, myModalIMG) => {
-  // .myModal after displayed
-  let originalSrc = LiParent.attr("src");
-  // IMG container
-  myModalIMG.attr("src", originalSrc);
-  // myModal change src
-  return;
-}
-
-let scrollingEnable = (modalIsActive) => {
-  if (modalIsActive) {
-    $('body').addClass('stop-scrolling');
-  } else {
-    $('body').removeClass('stop-scrolling');
-  }
-}
-
-let scrollFunction = () => {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    document.getElementById("myBtn").style.display = "block";
-  } else {
-    document.getElementById("myBtn").style.display = "none";
-  }
-}
-
-/*HIDE MODAL */
-let hideModal = (ObjectClosing) => {
-  $(ObjectClosing).hide();
-}
-
-
 let modalFunctionality = () => {
 
   /*Add arrows to all html IMGS */
@@ -230,3 +127,96 @@ let modalFunctionality = () => {
 
   //set image default grid width and height
 }
+
+
+if (document.readyState !== 'loading') {
+  console.log('document is already ready, just execute code here');
+  /*AutoSize all images */
+  autoHeightautoWidthImg();
+  modalFunctionality();
+} else {
+  document.addEventListener('DOMContentLoaded', function () {
+    console.log('document was not ready, loading w/ DOM');
+    /*AutoSize all images */
+    autoHeightautoWidthImg();
+    modalFunctionality();
+  });
+}
+
+let topFunction = function () {
+  document.body.scrollTop = 0; // For Chrome, Safari and Opera
+  document.documentElement.scrollTop = 0; // For IE and Firefox
+};
+
+let everyImageContainer = () => {
+  // foreach img in folder place Li>img,div>div,div>img,div
+}
+
+let appendARROWS = () => {
+  let footerNode = document.getElementsByClassName("modal-content");
+  let arrowsHTML = `    <!-- Next/previous controls --><div class="prev" data-arrow-value="-1">&#10094;</div>`;
+  let rightArrowHTML = `<div class="next" data-arrow-value="1">&#10095;</div>`;
+  let closeIconHTML = `<span class="close">&times;</span>`;
+  for (let i = 0; i < footerNode.length; i++) {
+    footerNode[i].insertAdjacentHTML('beforebegin', closeIconHTML);
+    footerNode[i].insertAdjacentHTML('beforebegin', arrowsHTML);
+    footerNode[i].insertAdjacentHTML('afterend', rightArrowHTML);
+  }
+}
+
+
+let modalIcons = (element, modalIsActive) => {
+  scrollingEnable(modalIsActive);
+  if (modalIsActive) {
+    $(".myModal").show();
+    $(".prev").css("display", "inline-block");
+    $(".next").css("display", "inline-block");
+    $(".close").show();
+  } else if (!modalIsActive) {
+    $(element).hide();
+  } else {
+    console.log("just checking");
+  }
+}
+
+let PositionCheck = (currentIndex, arrowClickNum, ImgCount) => {
+  if (currentIndex + arrowClickNum < 0) {
+    return ImgCount; //returns last image in set
+  } else if (arrowClickNum + currentIndex > ImgCount) {
+    return 0; //returns first image in set
+  } else {
+    return currentIndex + arrowClickNum;
+  }
+}
+
+let UpdateImgSource = (LiParent, myModalIMG) => {
+  // .myModal after displayed
+  let originalSrc = LiParent.attr("src");
+  // IMG container
+  myModalIMG.attr("src", originalSrc);
+  // myModal change src
+  return;
+}
+
+let scrollingEnable = (modalIsActive) => {
+  if (modalIsActive) {
+    $('body').addClass('stop-scrolling');
+  } else {
+    $('body').removeClass('stop-scrolling');
+  }
+}
+
+let scrollFunction = () => {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+/*HIDE MODAL */
+let hideModal = (ObjectClosing) => {
+  $(ObjectClosing).hide();
+}
+
+
