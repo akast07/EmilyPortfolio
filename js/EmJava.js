@@ -23,6 +23,7 @@ function autoHeightautoWidthImg(){
 
     uniqueImage = AllImageLi[i].children[0];
     elementAutoHeight = (uniqueImage.naturalHeight * 345) / uniqueImage.naturalWidth;
+    console.log(`Unique Image height : ${elementAutoHeight}`);
     uniqueImage.height = elementAutoHeight;
     uniqueImage.width = 345;
   }
