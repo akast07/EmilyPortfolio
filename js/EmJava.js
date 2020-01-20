@@ -4,6 +4,36 @@ Author : Alejandro C.
 Last Updated : 2/25/2019
 */
 
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+
+if (document.readyState !== 'loading') {
+  console.log('document is already ready, just execute code here');
+  /*AutoSize all images */
+  autoHeightautoWidthImg();
+  modalFunctionality();
+} else {
+  document.addEventListener('DOMContentLoaded', function () {
+    console.log('document was not ready, place code here');
+    /*AutoSize all images */
+    autoHeightautoWidthImg();
+    modalFunctionality();
+  });
+}
+
+//-----test to wait for load window before loading DOM
+window.addEventListener('DOMContentLoaded ', () => {
+  console.log('before document ready');
+  /*Displays button after 100 px down the page */
+
+  /*AutoSize all images */
+  autoHeightautoWidthImg();
+  modalFunctionality();
+});
+
 let topFunction = function () {
   document.body.scrollTop = 0; // For Chrome, Safari and Opera
   document.documentElement.scrollTop = 0; // For IE and Firefox
@@ -200,17 +230,3 @@ let modalFunctionality = () => {
 
   //set image default grid width and height
 }
-
-window.onscroll = function () {
-  scrollFunction();
-};
-
-//-----test to wait for load window before loading DOM
-window.addEventListener('DOMContentLoaded ', () => {
-  console.log('before document ready');
-  /*Displays button after 100 px down the page */
-
-  /*AutoSize all images */
-  autoHeightautoWidthImg();
-  modalFunctionality();
-});
