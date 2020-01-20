@@ -100,7 +100,7 @@ function hideModal(ObjectClosing) {
   $(ObjectClosing).hide();
 }
 
-(function ($) {
+let modalFunctionality = () =>{
 
   $(document).ready(function () {
 
@@ -211,4 +211,11 @@ function hideModal(ObjectClosing) {
     //set image default grid width and height
     
   });
-}($));
+}
+
+
+//-----test to wait for load window before loading DOM
+window.addEventListener('load', function () {
+  modalFunctionality();
+  });
+  
