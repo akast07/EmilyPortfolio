@@ -203,7 +203,7 @@ let modalFunctionality = () =>{
 
 
 //-----test to wait for load window before loading DOM
-window.addEventListener('load', function () {
+window.addEventListener('DOMContentLoaded ', function () {
   console.log('before document ready');
       /*Displays button after 100 px down the page */
       window.onscroll = function () {
