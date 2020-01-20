@@ -100,10 +100,6 @@ function hideModal(ObjectClosing) {
 
 
 let modalFunctionality = () =>{
-    /*Displays button after 100 px down the page */
-    window.onscroll = function () {
-      scrollFunction();
-    };
 
     /*Add arrows to all html IMGS */
     appendARROWS();
@@ -208,10 +204,13 @@ let modalFunctionality = () =>{
 
 //-----test to wait for load window before loading DOM
 window.addEventListener('load', function () {
-  $(document).on('ready',function(){
+  console.log('before document ready');
+      /*Displays button after 100 px down the page */
+      window.onscroll = function () {
+        scrollFunction();
+      };
     /*AutoSize all images */
     autoHeightautoWidthImg();
     modalFunctionality();
-  });
 });
   
