@@ -39,6 +39,7 @@ function appendARROWS() {
   }
 }
 
+
 function modalIcons(element,modalIsActive) {
   scrollingEnable(modalIsActive);
   if (modalIsActive) {
