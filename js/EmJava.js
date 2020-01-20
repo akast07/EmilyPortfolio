@@ -99,7 +99,7 @@ function hideModal(ObjectClosing) {
 
 (function ($) {
 
-  $().ready(function () {
+  $(document).ready(function () {
 
     /*Displays button after 100 px down the page */
     window.onscroll = function () {
