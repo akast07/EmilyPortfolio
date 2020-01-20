@@ -19,10 +19,11 @@ function autoHeightautoWidthImg(){
   let elementAutoHeight;
 
   //set height and width for each image in page respectively
-  console.log(`ALL IMAGES COUNT : ${AllImageLi.length}`)
+  console.log(`ALL IMAGES COUNT : ${AllImageLi.length}`);
   for(i = 0; i<AllImageLi.length; i++){
 
     uniqueImage = AllImageLi[i].children[0];
+    console.log(`IMAGE OBJECT : ${uniqueImage}`);
     elementAutoHeight = (uniqueImage.naturalHeight * 345) / uniqueImage.naturalWidth;
     console.log(`Unique Image height : ${elementAutoHeight}`);
     uniqueImage.height = elementAutoHeight;
