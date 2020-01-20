@@ -93,24 +93,18 @@ function scrollFunction() {
   }
 }
 
-
-
 /*HIDE MODAL */
 function hideModal(ObjectClosing) {
   $(ObjectClosing).hide();
 }
 
+
 let modalFunctionality = () =>{
-
-  $(document).ready(function () {
-
     /*Displays button after 100 px down the page */
     window.onscroll = function () {
       scrollFunction();
     };
 
-    /*AutoSize all images */
-    autoHeightautoWidthImg();
     /*Add arrows to all html IMGS */
     appendARROWS();
 
@@ -209,13 +203,15 @@ let modalFunctionality = () =>{
     });
 
     //set image default grid width and height
-    
-  });
 }
 
 
 //-----test to wait for load window before loading DOM
 window.addEventListener('load', function () {
-  modalFunctionality();
+  $(document).on('ready',function(){
+    /*AutoSize all images */
+    autoHeightautoWidthImg();
+    modalFunctionality();
   });
+});
   
