@@ -14,6 +14,7 @@ function everyImageContainer(){
 
 function autoHeightautoWidthImg(){
   let AllImageLi = document.getElementsByClassName('image');
+  console.log(AllImageLi);
   let uniqueImage;
   let elementAutoHeight;
 
