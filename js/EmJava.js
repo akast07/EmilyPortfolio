@@ -12,22 +12,22 @@ window.onscroll = function () {
 let autoHeightautoWidthImg = () => {
   let AllImageLi = document.getElementsByClassName('image');
   console.log(AllImageLi);
+  let imgCount = AllImageLi.length;
   let uniqueImage;
   let elementAutoHeight;
-  let imgNullCheck;
-  //set height and width for each image in page respectively
-  console.log(`ALL IMAGES COUNT : ${AllImageLi.length}`);
-  for (i = 0; i < AllImageLi.length; i++) {
+  let imgNullCheck = false;
+
+  for (i = 0; i < imgCount; i++) {
     console.log(AllImageLi[i]);
-    uniqueImage = AllImageLi[i].children[0];
-    if(uniqueImage == null){
+    if(AllImageLi[i].children[0] == null){
       console.log(AllImageLi[i]);
+    }else{
+      console.log(`IMAGE OBJECT : ${AllImageLi[i].children[0]}`);
+      elementAutoHeight = (AllImageLi[i].children[0].naturalHeight * 345) / AllImageLi[i].children[0].naturalWidth;
+      console.log(`Unique Image height : ${elementAutoHeight}`);
+      AllImageLi[i].children[0].height = elementAutoHeight;
+      AllImageLi[i].children[0].width = 345;
     }
-    console.log(`IMAGE OBJECT : ${uniqueImage}`);
-    elementAutoHeight = (uniqueImage.naturalHeight * 345) / uniqueImage.naturalWidth;
-    console.log(`Unique Image height : ${elementAutoHeight}`);
-    uniqueImage.height = elementAutoHeight;
-    uniqueImage.width = 345;
   }
 }
 let modalFunctionality = () => {
