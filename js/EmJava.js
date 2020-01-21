@@ -198,7 +198,7 @@ let hideModal = (ObjectClosing) => {
 };
 
 
-$(window).ready(function(){
+$(window).load(function(){
   let imagesLoaded = 0;
   let AllImageLi = document.getElementsByClassName('image');
   let totalImages = AllImageLi.length; 
