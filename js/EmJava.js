@@ -4,7 +4,6 @@ Author : Alejandro C.
 Last Updated : 2/25/2019
 */
 
-console.log('at least the js is loading');
 window.onscroll = function () {
   scrollFunction();
 };
@@ -205,21 +204,7 @@ $(document).ready(function(){
   let totalImages = AllImageLi.length; 
   console.log('total images : ' + totalImages);
   console.log(AllImageLi);
-
-  for(i = 0;i<totalImages;i++){
-    $('<img>').on('load',imageLoaded).attr('src',$(AllImageLi[i].children[0]).attr('src'));
-  }
   autoHeightautoWidthImg(AllImageLi,totalImages);
   modalFunctionality();
-
-  function imageLoaded() {
-    imagesLoaded++;
-    if (imagesLoaded == totalImages) {
-      allImagesLoaded();
-    }
-  }
-  function allImagesLoaded() {
-    console.log('ALL IMAGES LOADED');
-  }
 });
 
