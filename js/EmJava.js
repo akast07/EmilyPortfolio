@@ -4,32 +4,23 @@ Author : Alejandro C.
 Last Updated : 2/25/2019
 */
 
-
+console.log('at least the js is loading');
 window.onscroll = function () {
   scrollFunction();
 };
 
-let autoHeightautoWidthImg = () => {
-  let AllImageLi = document.getElementsByClassName('image');
-  console.log(AllImageLi);
-  let imgCount = AllImageLi.length;
-  let uniqueImage;
+let autoHeightautoWidthImg = (AllImageLi,totalImages) => {
   let elementAutoHeight;
-  let imgNullCheck = false;
 
-  for (i = 0; i < imgCount; i++) {
-    console.log(AllImageLi[i]);
-    if(AllImageLi[i].children[0] == null){
-      console.log(AllImageLi[i]);
-    }else{
-      console.log(`IMAGE OBJECT : ${AllImageLi[i].children[0]}`);
-      elementAutoHeight = (AllImageLi[i].children[0].naturalHeight * 345) / AllImageLi[i].children[0].naturalWidth;
-      console.log(`Unique Image height : ${elementAutoHeight}`);
-      AllImageLi[i].children[0].height = elementAutoHeight;
-      AllImageLi[i].children[0].width = 345;
-    }
+  for (i = 0; i < totalImages; i++) {
+    console.log(AllImageLi[i].children[0]); ///<img element>
+    elementAutoHeight = (AllImageLi[i].children[0].naturalHeight * 345) / AllImageLi[i].children[0].naturalWidth;
+    console.log(`Unique Image height : ${elementAutoHeight}`);
+    AllImageLi[i].children[0].height = elementAutoHeight;
+    elementAutoHeight = null; //reset elementAutoHeight
+    AllImageLi[i].children[0].width = 345;
   }
-}
+};
 let modalFunctionality = () => {
 
   /*Add arrows to all html IMGS */
@@ -129,22 +120,7 @@ let modalFunctionality = () => {
   });
 
   //set image default grid width and height
-}
-
-
-if (document.readyState !== 'loading') {
-  console.log('document is already ready, just execute code here');
-  /*AutoSize all images */
-  autoHeightautoWidthImg();
-  modalFunctionality();
-} else {
-  document.addEventListener('DOMContentLoaded', function () {
-    console.log('document was not ready, loading w/ DOM');
-    /*AutoSize all images */
-    autoHeightautoWidthImg();
-    modalFunctionality();
-  });
-}
+};
 
 let topFunction = function () {
   document.body.scrollTop = 0; // For Chrome, Safari and Opera
@@ -153,7 +129,7 @@ let topFunction = function () {
 
 let everyImageContainer = () => {
   // foreach img in folder place Li>img,div>div,div>img,div
-}
+};
 
 let appendARROWS = () => {
   let footerNode = document.getElementsByClassName("modal-content");
@@ -165,7 +141,7 @@ let appendARROWS = () => {
     footerNode[i].insertAdjacentHTML('beforebegin', arrowsHTML);
     footerNode[i].insertAdjacentHTML('afterend', rightArrowHTML);
   }
-}
+};
 
 
 let modalIcons = (element, modalIsActive) => {
@@ -180,7 +156,7 @@ let modalIcons = (element, modalIsActive) => {
   } else {
     console.log("just checking");
   }
-}
+};
 
 let PositionCheck = (currentIndex, arrowClickNum, ImgCount) => {
   if (currentIndex + arrowClickNum < 0) {
@@ -190,7 +166,7 @@ let PositionCheck = (currentIndex, arrowClickNum, ImgCount) => {
   } else {
     return currentIndex + arrowClickNum;
   }
-}
+};
 
 let UpdateImgSource = (LiParent, myModalIMG) => {
   // .myModal after displayed
@@ -199,7 +175,7 @@ let UpdateImgSource = (LiParent, myModalIMG) => {
   myModalIMG.attr("src", originalSrc);
   // myModal change src
   return;
-}
+};
 
 let scrollingEnable = (modalIsActive) => {
   if (modalIsActive) {
@@ -207,7 +183,7 @@ let scrollingEnable = (modalIsActive) => {
   } else {
     $('body').removeClass('stop-scrolling');
   }
-}
+};
 
 let scrollFunction = () => {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -215,11 +191,35 @@ let scrollFunction = () => {
   } else {
     document.getElementById("myBtn").style.display = "none";
   }
-}
+};
 
 /*HIDE MODAL */
 let hideModal = (ObjectClosing) => {
   $(ObjectClosing).hide();
-}
+};
 
+
+$(document).ready(function(){
+  let imagesLoaded = 0;
+  let AllImageLi = document.getElementsByClassName('image');
+  let totalImages = AllImageLi.length; 
+  console.log('total images : ' + totalImages);
+  console.log(AllImageLi);
+
+  for(i = 0;i<totalImages;i++){
+    $('<img>').on('load',imageLoaded).attr('src',$(AllImageLi[i].children[0]).attr('src'));
+  }
+  autoHeightautoWidthImg(AllImageLi,totalImages);
+  modalFunctionality();
+
+  function imageLoaded() {
+    imagesLoaded++;
+    if (imagesLoaded == totalImages) {
+      allImagesLoaded();
+    }
+  }
+  function allImagesLoaded() {
+    console.log('ALL IMAGES LOADED');
+  }
+});
 
